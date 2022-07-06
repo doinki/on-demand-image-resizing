@@ -74,6 +74,7 @@ exports.handler = async (event, _, callback) => {
 
   do {
     buffer = await sharp(Body, { animated })
+      .rotate()
       .resize({
         height,
         width,

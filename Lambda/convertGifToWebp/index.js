@@ -27,6 +27,7 @@ exports.handler = async (event) => {
 
   do {
     buffer = await sharp(Body, { animated })
+      .rotate()
       .resize({ height, width, fit: 'inside' })
       .webp({ effort: 5, quality })
       .toBuffer();
